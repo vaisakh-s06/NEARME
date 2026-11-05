@@ -1,0 +1,73 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="100dp"
+    android:height="100dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- 1. DARTBOARD / TARGET RINGS (Red and White) -->
+    <!-- Outer Red Ring -->
+    <path
+        android:fillColor="#E53935"
+        android:pathData="M50,6 A44,44 0 1,0 50.001,6 Z" />
+    <!-- White Ring -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M50,16 A34,34 0 1,0 50.001,16 Z" />
+    <!-- Middle Red Ring -->
+    <path
+        android:fillColor="#E53935"
+        android:pathData="M50,26 A24,24 0 1,0 50.001,26 Z" />
+    <!-- Inner White Ring -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M50,36 A14,14 0 1,0 50.001,36 Z" />
+    <!-- Center Bullseye (Red) -->
+    <path
+        android:fillColor="#D50000"
+        android:pathData="M50,44 A6,6 0 1,0 50.001,44 Z" />
+
+    <!-- 2. CLOCK HANDS (Hour & Minute hands) -->
+    <!-- Hour Hand (pointing left towards 9 o'clock) -->
+    <path
+        android:strokeColor="#1E293B"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:pathData="M50,50 L28,50" />
+    <!-- Minute Hand (pointing up-left towards 11 o'clock) -->
+    <path
+        android:strokeColor="#1E293B"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:pathData="M50,50 L38,24" />
+
+    <!-- 3. DART AT THE CENTER (Reaching destination bullseye) -->
+    <!-- Dart Shaft (Diagonal line from top-right 75,25 down to center 50,50) -->
+    <path
+        android:strokeColor="#263238"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:pathData="M75,25 L50,50" />
+    <!-- Dart Metallic Barrel/Grip -->
+    <path
+        android:strokeColor="#FFC107"
+        android:strokeWidth="4.5"
+        android:strokeLineCap="round"
+        android:pathData="M66,34 L57,43" />
+    <!-- Dart Flight/Fins at the tail -->
+    <path
+        android:fillColor="#00E5FF"
+        android:pathData="M73,27 L85,15 L77,23 Z" />
+    <path
+        android:fillColor="#00B0FF"
+        android:pathData="M75,25 L87,23 L79,27 Z" />
+    <path
+        android:fillColor="#E040FB"
+        android:pathData="M71,29 L73,17 L75,25 Z" />
+
+    <!-- Golden Center Pivot Pin -->
+    <path
+        android:fillColor="#FFD600"
+        android:pathData="M50,48 A2,2 0 1,0 50.001,48 Z" />
+
+</vector>
+

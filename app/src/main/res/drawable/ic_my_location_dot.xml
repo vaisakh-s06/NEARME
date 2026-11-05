@@ -1,0 +1,19 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="28dp"
+    android:height="28dp"
+    android:viewportWidth="28"
+    android:viewportHeight="28">
+    <!-- Outer soft halo -->
+    <path
+        android:fillColor="#4D00E5FF"
+        android:pathData="M14,14m-13,0a13,13 0,1 1,26 0a13,13 0,1 1,-26 0" />
+    <!-- White border -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M14,14m-8,0a8,8 0,1 1,16 0a8,8 0,1 1,-16 0" />
+    <!-- Bright blue center dot -->
+    <path
+        android:fillColor="#00B0FF"
+        android:pathData="M14,14m-6,0a6,6 0,1 1,12 0a6,6 0,1 1,-12 0" />
+</vector>
+
