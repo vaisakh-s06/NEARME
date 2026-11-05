@@ -21,6 +21,7 @@ import androidx.compose.runtime.getValue
 import androidx.core.content.ContextCompat
 import com.thealarm.app.model.Destination
 import com.thealarm.app.model.JourneyState
+import com.thealarm.app.network.OfflineSearchManager
 import com.thealarm.app.service.AlarmService
 import com.thealarm.app.ui.screens.HomeScreen
 import com.thealarm.app.ui.theme.TheAlarmTheme
@@ -52,6 +53,8 @@ class MainActivity : ComponentActivity(), LocationListener {
         super.onCreate(savedInstanceState)
 
         locationManager = getSystemService(LOCATION_SERVICE) as? LocationManager
+
+        OfflineSearchManager.initialize(applicationContext)
 
         requestRequiredPermissions()
         promptIgnoreBatteryOptimizations()

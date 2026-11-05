@@ -705,7 +705,7 @@ fun HomeScreen(
                         if (query.trim().length >= 2) {
                             isSearching = true
                             coroutineScope.launch {
-                                searchResults = NominatimSearch.searchPlaces(query)
+                                searchResults = NominatimSearch.searchPlaces(query, context)
                                 isSearching = false
                             }
                         } else {

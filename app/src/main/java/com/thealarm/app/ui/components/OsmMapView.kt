@@ -31,10 +31,17 @@ fun OsmMapView(
 ) {
     val context = LocalContext.current
 
-    // Set OSM User-Agent configuration
+    // Set OSM User-Agent & Persistent Offline Cache configuration
     LaunchedEffect(Unit) {
-        Configuration.getInstance().load(context, context.getSharedPreferences("osmdroid", Context.MODE_PRIVATE))
-        Configuration.getInstance().userAgentValue = context.packageName
+        val prefs = context.getSharedPreferences("osmdroid", Context.MODE_PRIVATE)
+        val config = Configuration.getInstance()
+        config.load(context, prefs)
+        config.userAgentValue = context.packageName
+        // Keep up to 600 MB of map tiles persistently in device storage for offline view
+        config.tileFileSystemCacheMaxBytes = 600L * 1024 * 1024
+        config.tileFileSystemCacheTrimBytes = 500L * 1024 * 1024
+        // Extend cache validity so viewed tiles stay offline without expiring
+        config.expirationExtendedDuration = 1000L * 60 * 60 * 24 * 60
     }
 
     var mapViewRef by remember { mutableStateOf<MapView?>(null) }
@@ -63,6 +70,7 @@ fun OsmMapView(
         factory = { ctx ->
             MapView(ctx).apply {
                 setTileSource(TileSourceFactory.MAPNIK)
+                setUseDataConnection(true)
                 setMultiTouchControls(true)
                 zoomController.setVisibility(CustomZoomButtonsController.Visibility.NEVER)
 
