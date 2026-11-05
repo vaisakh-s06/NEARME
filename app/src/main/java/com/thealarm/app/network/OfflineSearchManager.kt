@@ -95,3 +95,4 @@ object OfflineSearchManager {
         scoredResults
     }
 }
+
